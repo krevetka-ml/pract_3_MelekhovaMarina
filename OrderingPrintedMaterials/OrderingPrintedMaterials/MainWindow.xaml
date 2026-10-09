@@ -1,0 +1,132 @@
+﻿<Window x:Class="OrderingPrintedMaterials.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrderingPrintedMaterials"
+        Title="Заказ печатной продукции" Height="800" Width="1050" Background="#f2f6f9">
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top"  Height="60" Background="#7b5262">
+            <TextBlock Text="Заказ печатной продукции" Foreground="White"
+                       FontSize="22" FontWeight="Medium" FontFamily="Golos Text"
+                       VerticalAlignment="Center" HorizontalAlignment="Left"
+                       Margin="15,5,0,0"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Bottom" Height="35" Background="#e4ebf1">
+            <TextBlock Text="Макет не проверен" Foreground="#373b54" 
+                       FontSize="12" VerticalAlignment="Center" Margin="15,0,0,0"/>
+        </DockPanel>
+        <Grid Margin="15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="160"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Background="White"
+                    CornerRadius="10" BorderThickness="1" BorderBrush="#dfe5eb">
+                <StackPanel>
+                    <TextBlock Text="Категории" Foreground="#273863" FontSize="16" Margin="15, 20, 0, 15"
+                               FontWeight="Medium" FontFamily="Golos Text"/>
+                    <Button Margin="15,0,20,6" Height="30" Content="Документы"/>
+                    <Button Margin="15,0,20,6" Height="30" Content="Визитки"/>
+                    <Button Margin="15,0,20,6" Height="30" Content="Буклеты"/>
+                    <Button Margin="15,0,20,6" Height="30" Content="Плакаты"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" Background="White"
+                    CornerRadius="10" BorderThickness="1" BorderBrush="#dfe5eb" Margin="15,0,0,0">
+                <Grid Margin="15">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Заказчик" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5" />
+                    <TextBox Grid.Row="0" Grid.Column="1" Height="25" Margin="0,5,0,5"
+                             VerticalContentAlignment="Center"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Телефон" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Height="25" Margin="0,5,0,5"
+                             VerticalContentAlignment="Center"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Вид продукции" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <ComboBox Grid.Row="2" Grid.Column="1" Height="25" Margin="0,5,0,5">
+                        <ComboBoxItem Content="Документы"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Формат" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <ComboBox Grid.Row="3" Grid.Column="1" Height="25" Margin="0,5,0,5">
+                        <ComboBoxItem Content="A4"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Тираж" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Height="25" Margin="0,5,0,5"
+                             Text="100" VerticalContentAlignment="Center"/>
+
+                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Тип бумаги" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <ComboBox Grid.Row="5" Grid.Column="1" Height="25" Margin="0,5,0,5">
+                        <ComboBoxItem Content="Офсетная"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="6" Grid.Column="0" Text="Цветность" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,0,5"/>
+                    <ComboBox Grid.Row="6" Grid.Column="1" Height="25" Margin="0,5,0,5">
+                        <ComboBoxItem Content="Черно-белая"/>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="7" Grid.Column="0" Text="Срок готовности" FontSize="14"
+                               VerticalAlignment="Center" Margin="0,5,20,5"/>
+                    <DatePicker Grid.Row="7" Grid.Column="1" Height="25" Margin="0,5,0,5"/>
+
+                    <StackPanel Grid.Row="0" Grid.RowSpan="9" Grid.Column="2"
+                                Margin="20,5,0,0" VerticalAlignment="Top">
+                        <Border Height="250" Width="200" Background="#eef3f7" BorderThickness="1" BorderBrush="#b4c3cf">
+                            <TextBlock Text="Предпросмотр макета" FontSize="14"
+                                       VerticalAlignment="Center" TextAlignment="Center"
+                                       Foreground="#647785"/>
+                        </Border>
+                        <Button Height="30" Width="182" Margin="0,20,20,0" Content="Выбрать файл" HorizontalAlignment="Left"/>
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="Примечание к заказу" FontSize="14"
+                               VerticalAlignment="Top" Margin="0,15,0,0"/>
+                    <TextBox Grid.Row="9" Grid.ColumnSpan="3" Height="60" VerticalAlignment="Bottom" TextWrapping="Wrap" AcceptsReturn="True" />
+
+                    <TextBlock Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" Text="Дополнительная обработка" Margin="0,10,0,0"
+                               FontSize="16" Foreground="#273863" FontWeight="Medium" FontFamily="Golos Text" Height="20" VerticalAlignment="Top"/>
+
+                    <WrapPanel Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Height="15" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,0,0,20">
+                        <CheckBox Content="Ламинирование" Margin="0,0,10,0"/>
+                        <CheckBox Content="Скрепление" Margin="0,0,10,0"/>
+                        <CheckBox Content="Переплёт" Margin="0,0,10,0"/>
+                        <CheckBox Content="Обрезка" Margin="0,0,10,0"/>
+                        <CheckBox Content="Скругление углов"/>
+                    </WrapPanel>
+
+                    <Button Grid.Column="2" Grid.Row="11" Height="30" Width="80" Content="Оформить" HorizontalAlignment="Left" Margin="25,0,0,0"/>
+                    <Button Grid.Column="2" Grid.Row="11" Height="30" Width="80" Content="Отмена" HorizontalAlignment="Right" Margin="0,0,25,0"/>
+                </Grid>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>
